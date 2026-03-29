@@ -1,8 +1,7 @@
 FROM node:20
 WORKDIR /app
-ADD https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip  /tmp/catalogue.zip
-RUN dnf install unzip -y
-RUN unzip /tmp/catalogue.zip -d /app
+COPY package.json .
+COPY *.js .
 RUN npm install
 ENV MONGO=true \
     MONGO_URL="mongodb:mongodb:27017/catalogue"
