@@ -33,7 +33,7 @@ services:
     image: jaswanth96/mongodb:1.0.0
     container_name: mongodb
   redis:
-    image: jaswanth96/redis:7.0
+    image: redis:7.0
     container_name: redis
   
 networks:
