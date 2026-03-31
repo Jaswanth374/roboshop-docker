@@ -1,27 +1,27 @@
 services:
   catalogue:
     build: ./catalogue
-    image: catalogue:1.0.0
+    image: jaswanth96/catalogue:1.0.0
     container_name: catalogue
     depends_on:
     - mongodb
   cart:
     build: ./cart
-    image: cart:1.0.0
+    image: jaswanth96/cart:1.0.0
     container_name: cart
     depends_on:
     - redis
     - catalogue
   user:
     build: ./user
-    image: user:1.0.0
+    image: jaswanth96/user:1.0.0
     container_name: user
     depends_on:
     - redis
     - mongodb
   frontend:
     build: ./frontend
-    image: frontend:1.0.0
+    image: jaswanth96/frontend:1.0.0
     container_name: frontend
     ports:
     - 80:80
@@ -30,10 +30,10 @@ services:
     - cart
   mongodb:
     build: ./mongodb
-    image: mongodb:1.0.0
+    image: jaswanth96/mongodb:1.0.0
     container_name: mongodb
   redis:
-    image: redis:7.0
+    image: jaswanth96/redis:7.0
     container_name: redis
   
 networks:
